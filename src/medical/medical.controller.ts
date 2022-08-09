@@ -7,9 +7,11 @@ export class MedicalController {
   constructor(private readonly medicalService: MedicalService) {}
 
   @Get()
-  async getMedicalData(@Query('token') token: string): Promise<GenericResponse<any>> {
-    if(token === undefined){
-      throw new UnauthorizedException("Please login to access this resource")
+  async getMedicalData(
+    @Query('token') token: string,
+  ): Promise<GenericResponse<any>> {
+    if (token === undefined) {
+      throw new UnauthorizedException('Please login to access this resource');
     }
     const results = await this.medicalService.getMedicalData(token);
     return { message: 'Medical Data loaded successfully', payload: results };
