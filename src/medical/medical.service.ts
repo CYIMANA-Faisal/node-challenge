@@ -3,7 +3,6 @@ import * as path from 'path';
 import * as reader from 'xlsx';
 import * as jwt from 'jsonwebtoken';
 import { ConfigService } from '@nestjs/config';
-import { Role } from './enums/role.enum';
 
 @Injectable()
 export class MedicalService {
